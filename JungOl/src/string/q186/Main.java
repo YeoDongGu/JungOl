@@ -17,9 +17,7 @@ public class Main {
 				max = str[i].length();
 			}
 		}
-
 		System.out.println(max);
-
 	}
 
 }
