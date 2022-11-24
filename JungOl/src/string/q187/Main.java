@@ -12,7 +12,7 @@ public class Main {
 		char[] tmp = new char[ch.length];
 		int length = ch.length;
 		while (true) {
-			int num = sc.nextInt();
+			int num = sc.nextInt(); //
 
 			if (num > length) {
 				ch[length - 1] = ' ';
@@ -20,15 +20,16 @@ public class Main {
 			} else {
 				ch[num - 1] = ' ';
 			}
-
-			for (int i = 0, j = 0; i < ch.length; i++, j++) {
+			// ch 배열의 있는 값을 tmp 배열로 옮기다가 ' ' 이 들어있는 칸이 발견되면 j를 감소시켜 tmp배열에 빈공간이 없도록 대입한다
+			for (int i = 0, j = 0; i < length; i++, j++) {
 				if (ch[i] == ' ') {
 					j--;
 					continue;
 				}
 				tmp[j] = ch[i];
 			}
-			for (int i = 0; i < ch.length; i++) {
+
+			for (int i = 0; i < length; i++) {
 				ch[i] = tmp[i];
 			}
 
@@ -42,6 +43,7 @@ public class Main {
 			System.out.println();
 
 		}
+		sc.close();
 
 	}
 
