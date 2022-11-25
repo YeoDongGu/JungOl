@@ -8,18 +8,23 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int m = sc.nextInt();
+		if (m == 1) {
+			dice1(1, n);
+		} else if (m == 2) {
+			dice2(1);
+		} else if (m == 3)
+			dice3(1);
+	}
+
+	public static void dice1(int a, int b) {
 		
 	}
 
-	public static void dice1() {
-		
-	}
-
-	public static void dice2() {
+	public static void dice2(int n) {
 
 	}
 
-	public static void dice3() {
+	public static void dice3(int n) {
 
 	}
 
