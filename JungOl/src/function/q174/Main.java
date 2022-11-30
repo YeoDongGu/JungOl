@@ -14,7 +14,7 @@ class Student {
 	}
 
 	public void print() {
-		
+		System.out.printf("%d %d %d %d\n", kor, eng, math, kor + eng + math);
 	}
 
 	public void setKor(int kor) {
@@ -40,10 +40,10 @@ class Student {
 	public void setMath(int math) {
 		this.math = math;
 	}
+
 }
 
 public class Main {
-
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Student[] stu = new Student[3];
@@ -53,7 +53,22 @@ public class Main {
 			int math = sc.nextInt();
 			stu[i] = new Student(kor, eng, math);
 		}
-
+		int korsum = 0;
+		int engsum = 0;
+		int mathsum = 0;
+		for (int i = 0; i < stu.length; i++) {
+			korsum += stu[i].getKor();
+		}
+		for (int i = 0; i < stu.length; i++) {
+			engsum += stu[i].getEng();
+		}
+		for (int i = 0; i < stu.length; i++) {
+			mathsum += stu[i].getMath();
+		}
+		for (int i = 0; i < stu.length; i++) {
+			stu[i].print();
+		}
+		System.out.printf("%d %d %d %d", korsum, engsum, mathsum, korsum + engsum + mathsum);
 	}
 
 }

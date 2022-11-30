@@ -3,7 +3,7 @@ package function.q171;
 import java.util.Scanner;
 
 class Math {
-	int num;
+	private int num;
 
 	public Math(int num) {
 		this.num = num;
@@ -23,7 +23,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
-
+		sc.close();
 		Math m = new Math(num);
 		m.Calculate();
 

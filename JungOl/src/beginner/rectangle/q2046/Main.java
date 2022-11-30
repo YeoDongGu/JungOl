@@ -12,7 +12,6 @@ class Rectangle {
 	}
 
 	public void print() {
-		// m 이 1일떄
 		if (m == 1) {
 			for (int i = 1; i <= n; i++) {
 				for (int j = 0; j < n; j++) {
@@ -20,10 +19,7 @@ class Rectangle {
 				}
 				System.out.println();
 			}
-		}
-
-		// m 이 2일떄
-		if (m == 2) {
+		} else if (m == 2) {
 			for (int i = 0; i < n; i++) {
 				if (i % 2 == 0) {
 					for (int j = 0; j < n; j++) {
@@ -36,11 +32,7 @@ class Rectangle {
 				}
 				System.out.println();
 			}
-		}
-
-		// m 이 3일때
-		if (m == 3) {
-
+		} else if (m == 3) {
 			for (int i = 1; i <= n; i++) {
 				int r = i;
 				for (int j = 0; j < n; j++) {
