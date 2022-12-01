@@ -8,7 +8,7 @@ public class Main {
 		if (n == 1) {
 			res = 1;
 		} else {
-			res += n + sum(n - 1);
+			res = n + sum(n - 1);
 		}
 		return res;
 	}

@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Main {
 
 	public int num(int n) {
-		int res = 0;
-		int r = 10;
-		if (n / r == 0) {
-			res = (n % (r / 10)) * n % (r / 10);
+		int result = 0;
+		if (n == 0) {
+			result = 0;
 		} else {
-			res += (n % r) * (n % r) + num(r * 10);
+			result = (n % 10) * (n % 10) + num(n / 10);
 		}
-		return res;
+		return result;
 	}
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
+		sc.close();
 		Main m = new Main();
 		System.out.println(m.num(N));
 	}
