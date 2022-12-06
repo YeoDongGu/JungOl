@@ -22,13 +22,11 @@ class Parents {
 	public double getWeight() {
 		return weight;
 	}
-
 	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 
 }
-
 public class Main {
 
 	public static void main(String[] args) {
