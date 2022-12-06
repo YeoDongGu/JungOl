@@ -2,68 +2,52 @@ package cls.q616;
 
 import java.util.Scanner;
 
-class Point {
-	private int x, y;
+class Triangle {
+	private double x;
+	private double y;
 
-	public Point(int x, int y) {
+	public Triangle(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public void print() {
-		System.out.println(x + " " + y);
-	}
-
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
-}
 
-class Triangle {
-	private Point[] p;
-
-	public Triangle(int[] param) {
-		p = new Point[3];
-		for (int i = 0, j = 0; i < p.length; i++, j += 2) {
-			p[i] = new Point(param[j], param[j + 1]);
-		}
-	}
-
-	public void print() {
-		for (int i = 0; i < p.length; i++) {
-			p[i].print();
-		}
-	}
-
-	public void getCoG() {
-		int x = 0, y = 0;
-		for (int i = 0; i < p.length; i++) {
-			x += p[i].getX();
-			y += p[i].getY();
-		}
-		System.out.printf("(%.1f, %.1f)\n", (double) x / 3, (double) y / 3);
-	}
 }
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int[] p = new int[6];
-		for (int i = 0; i < p.length; i++) {
-			p[i] = sc.nextInt();
+
+		Triangle[] tri = new Triangle[3];
+
+		for (int i = 0; i < tri.length; i++) {
+			double inp1 = sc.nextInt();
+			double inp2 = sc.nextInt();
+			tri[i] = new Triangle(inp1, inp2);
 		}
 		sc.close();
 
-//		for (int i = 0; i < p.length; i++) {
-//			System.out.print(p[i] + " ");
-//		}
+		double avgX = 0;
+		double avgY = 0;
+		for (int i = 0; i < tri.length; i++) {
+			avgX += tri[i].getX();
+		}
+		avgX = avgX / tri.length;
 
-		Triangle tri = new Triangle(p);
-//		tri.print();
-		tri.getCoG();
+		for (int i = 0; i < tri.length; i++) {
+			avgY += tri[i].getY();
+		}
+		avgY = avgY / tri.length;
+
+		System.out.printf("(%.1f, %.2f)", avgX, avgY);
+
 	}
+
 }

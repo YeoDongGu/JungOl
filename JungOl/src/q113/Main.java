@@ -30,6 +30,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int x = sc.nextInt();
 		int y = sc.nextInt();
+		sc.close();
 		Rectangle rc = new Rectangle(x + 5, 2 * y);
 		System.out.println("width = " + rc.getX());
 		System.out.println("length = " + rc.getY());
