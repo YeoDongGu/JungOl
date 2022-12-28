@@ -17,7 +17,7 @@ public class Main {
 						ch[j][k] = ' ';
 					}
 				}
-				ch[j + i][n - (j + 1)] = c; 
+				ch[j +i][n - (j + 1)] = c; 
 				c++;
 				if (c > 'Z') {
 					c = 'A';
