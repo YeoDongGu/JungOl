@@ -11,11 +11,10 @@ public class Main {
 		int sum = 0;
 		for (int i = inp; i <= 100; i++) {
 			sum += i;
-
-
 		}
 		
 		System.out.println(sum);
+		System.out.println("dlksjdfsdjfkl");
 
 	}
 
