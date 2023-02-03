@@ -14,11 +14,15 @@ public class Main {
 		}
 		sc.close();
 
-		Arrays.sort(inp);
-		for (int i = n - 1; i >= 0; i--) {
-			System.out.print(inp[i] + " ");
-		}
+		sort(inp);
 
+	}
+
+	public static void sort(int[] arr){
+		Arrays.sort(arr);
+		for (int i = arr.length - 1; i >= 0; i--) {
+			System.out.print(arr[i] + " ");
+		}
 	}
 
 }

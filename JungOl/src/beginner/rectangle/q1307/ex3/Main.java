@@ -9,8 +9,8 @@ public class Main {
         sc.close();
         char ch = 'A';
         char[][] arr = new char[n][n];
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = n - 1; j >= 0; j--) {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            for (int j = arr[i].length - 1; j >= 0; j--) {
                 arr[j][i] = ch;
                 ch++;
                 if(ch > 'Z'){

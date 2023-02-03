@@ -15,9 +15,7 @@ public class Main {
 			sum += score;
 			avg = (double) sum / r;
 		}
-		
-		
-		
+
 		System.out.printf("avg : %.1f\n", avg);
 
 		if (avg >= 80) {
