@@ -15,7 +15,7 @@ public class Main {
             arr[inp-1] += 1;
         }
 
-        for(int i = 0 ;i<10;i++){
+        for(int i = 0 ;i<arr.length;i++){
             if(arr[i] >0){
                 System.out.println((i+1) + " : " + arr[i] + "개");
             }
