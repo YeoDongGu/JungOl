@@ -15,9 +15,9 @@ public class Main {
 			for (int j = 0; j < str.length() - i; j++) {
 				System.out.print(ch[j]);
 			}
-
 			System.out.println();
 		}
+
 	}
 
 }

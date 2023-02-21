@@ -1,15 +1,16 @@
 package cls.q196;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Information {
 	private String name;
-	private String pnum;
+	private String tel;
 	private String address;
 
-	public Information(String name, String pnum, String address) {
+	public Information(String name, String tel, String address) {
 		this.name = name;
-		this.pnum = pnum;
+		this.tel = tel;
 		this.address = address;
 	}
 
@@ -17,8 +18,8 @@ class Information {
 		return name;
 	}
 
-	public String getPnum() {
-		return pnum;
+	public String getTel() {
+		return tel;
 	}
 
 	public String getAddress() {
@@ -33,9 +34,9 @@ public class Main {
 		Information[] inf = new Information[3];
 		for (int i = 0; i < inf.length; i++) {
 			String name = sc.next();
-			String pnum = sc.next();
+			String tel = sc.next();
 			String address = sc.next();
-			inf[i] = new Information(name, pnum, address);
+			inf[i] = new Information(name, tel, address);
 		}
 		sc.close();
 
@@ -50,8 +51,9 @@ public class Main {
 				}
 			}
 		}
+
 		System.out.println("name : " + inf[0].getName());
-		System.out.println("tel : " + inf[0].getPnum());
+		System.out.println("tel : " + inf[0].getTel());
 		System.out.println("addr : " + inf[0].getAddress());
 
 	}
