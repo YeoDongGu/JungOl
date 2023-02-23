@@ -2,58 +2,69 @@ package beginner.q1707.ex2;
 
 import java.util.Scanner;
 
+//Jungol - Beginner - 3. - 1707
 public class Main {
-    static int n, arr[][];
+    public static enum Dir {
+        RIGHT, DOWN, LEFT, UP
+    };
+
+    public static int inp;
+    public static int x = 0, y = 0;
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        inp = sc.nextInt();
+        sc.close();
+        int[][] ar = new int[inp][inp];
+        int cnt = 1;
+        Dir dir = Dir.RIGHT;
 
-        n = sc.nextInt();
-        arr = new int[n][n];
+        // print array
+//      for (int i = 0; i < ar.length; i++) {
+//         for (int j = 0; j < ar[i].length; j++) {
+//            System.out.print(ar[i][j] + " ");
+//         }
+//         System.out.println();
+//      }
 
-        int num = 1;
-        int r = 0;
-        int c = 0;
-        int dir = 0;
+        if (inp == 1) {
+            System.out.println(1);
+        } else {
+            while (cnt <= inp * inp) {
+                ar[y][x] = cnt++;
 
-        int[] dr = { 0, 1, 0, -1 };
-        int[] dc = { 1, 0, -1, 0 };
-
-        while(true) {
-            arr[r][c] = num;
-
-            int nextR = r + dr[dir];
-            int nextC = c + dc[dir];
-
-            if (changeDir(nextR, nextC)) {
-                // 방향 바꾸자
-                dir = (dir + 1) % 4;
-                nextR = r + dr[dir];
-                nextC = c + dc[dir];
-
-                if(changeDir(nextR, nextC)) {
-                    break;
+                switch (dir) {
+                    case RIGHT:
+                        x++;
+                        if (x == inp - 1 || ar[y][x + 1] != 0)
+                            dir = Dir.DOWN;
+                        break;
+                    case DOWN:
+                        y++;
+                        if (y == inp - 1 || ar[y + 1][x] != 0)
+                            dir = Dir.LEFT;
+                        break;
+                    case LEFT:
+                        x--;
+                        if (x == 0 || ar[y][x - 1] != 0)
+                            dir = Dir.UP;
+                        break;
+                    case UP:
+                        y--;
+                        if (y == 0 || ar[y - 1][x] != 0)
+                            dir = Dir.RIGHT;
+                        break;
                 }
             }
 
-            r = nextR;
-            c = nextC;
-
-            num++;
-        }
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(arr[i][j] + " ");
+            // print array
+//      System.out.println("------------------");
+            for (int i = 0; i < ar.length; i++) {
+                for (int j = 0; j < ar[i].length; j++) {
+                    System.out.printf("%d ", ar[i][j]);
+                }
+                System.out.println();
             }
-            System.out.println();
         }
-        sc.close();
-    }
-
-    private static boolean changeDir(int x, int y) {
-        if (x < 0 || y < 0 || x >= n || y >= n || arr[x][y] != 0) {
-            return true;
-        }
-        return false;
     }
 }
