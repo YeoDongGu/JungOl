@@ -21,7 +21,7 @@ class Score {
 
 	public void print() {
 		for (int i = 0; i < stu.length; i++) {
-			System.out.println(stu[i].getName() + " " + stu[i].getKor() + " " + stu[i].getMath() + " " + stu[i].getEng()
+			System.out.println(stu[i].getName() + " " + stu[i].getScore1() + " " + stu[i].getScore2() + " " + stu[i].getScore3()
 					+ " " + ScoreSum(i));
 		}
 	}
@@ -40,40 +40,39 @@ class Score {
 	}
 
 	public int ScoreSum(int x) {
-		int sum = stu[x].getEng() + stu[x].getKor() + stu[x].getMath();
+		int sum = stu[x].getScore1() + stu[x].getScore2() + stu[x].getScore3();
 		return sum;
 	}
 }
 
 class Student {
 	private String name;
-	private int kor;
-	private int math;
-	private int eng;
+	private int score1;
+	private int score2;
+	private int score3;
 
-	public Student(String name, int kor, int math, int eng) {
+	public Student(String name, int score1, int score2, int score3) {
 		this.name = name;
-		this.kor = kor;
-		this.math = math;
-		this.eng = eng;
+		this.score1 = score1;
+		this.score2 = score2;
+		this.score3 = score3;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public int getKor() {
-		return kor;
+	public int getScore1() {
+		return score1;
 	}
 
-	public int getMath() {
-		return math;
+	public int getScore2() {
+		return score2;
 	}
 
-	public int getEng() {
-		return eng;
+	public int getScore3() {
+		return score3;
 	}
-
 }
 
 public class Main {
